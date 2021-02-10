@@ -276,9 +276,13 @@ footer{
         justify-content: center;
         align-items: center;
         visibility: visible;
+        transform: rotate(-90deg); 
+        transition: .9s;
     }
     .newTransaction:hover{
         cursor: pointer;
+        transform: rotate(180deg); 
+        transition: .9s;
     }
     .newTransaction img{
         height: 40px;
