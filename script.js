@@ -73,8 +73,7 @@ const table = {
         )
         app.reload() /* o app reload foi usado por causa do cleanUp e para rodar novamente o init() */
 
-    }
-    ,
+    },
     innerHTMLTransaction(transaction, index) {
         const CSS = transaction.amount > 0 ? 'income' : 'expense';//uso do se e senãp       
         const Amount = utils.formatCurrency(transaction.amount);
@@ -95,6 +94,10 @@ const table = {
     }
 }
 const utils = {
+    formatAmount(amount){
+        amount = amount * 100
+        return Math.round(amount)
+    },
     format (date) {
         const DATE = date.split('-')
         return `${DATE[2]}/${DATE[1]}/${DATE[0]}`
@@ -134,7 +137,7 @@ const form = {
     },
     formatValues(){
         let {description,amount,date} = this.getValue()
-        amount = Number(amount) * 100;  
+        amount = utils.formatAmount(amount);  
         date = utils.format(date);
         return {description,amount,date}
     },
