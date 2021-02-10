@@ -55,6 +55,7 @@ h2{
 a{
     color: #28cc12d0;
     text-decoration: none;
+    visibility: visible;
 }
 
 a:hover{
@@ -231,18 +232,13 @@ input {
 }
 /* footer */
 footer{
-    text-align: center;
     padding: 2rem 0 .5rem;
+    text-align: center;
     color: #363F5F;
     opacity: .8;
 }
 .newTransaction{
-    width:100px; 
-    height:100px;
-    background: radial-gradient(circle, #16bffd, #cb3066);
-    border-radius: 100%;
-    display: flex;
-    justify-content: right;
+    visibility: hidden;
 }
 /* resposividade */
 @media (min-width:800px){
@@ -253,5 +249,31 @@ footer{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2rem;
+    }
+    .new.button{
+        visibility: hidden;
+    }
+    #newTransaction{
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 1rem;
+    }
+    .newTransaction{
+        width: 80px;
+        height: 80px;
+        background-color: #FF3CAC;
+        background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: visible;
+    }
+    .newTransaction:hover{
+        cursor: pointer;
+    }
+    .newTransaction img{
+        height: 40px;
+        width: 40px;
     }
 }
