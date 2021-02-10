@@ -230,15 +230,20 @@ input {
     justify-content: space-between;
     align-items: center;
 }
+#newTransaction{
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+}
+.newTransaction{
+    visibility: hidden;
+}
 /* footer */
 footer{
     padding: 2rem 0 .5rem;
     text-align: center;
     color: #363F5F;
     opacity: .8;
-}
-.newTransaction{
-    visibility: hidden;
 }
 /* resposividade */
 @media (min-width:800px){
@@ -254,9 +259,12 @@ footer{
         visibility: hidden;
     }
     #newTransaction{
+        position: initial;
         display: flex;
         justify-content: flex-end;
         padding-top: 1rem;
+        opacity: 1;
+        visibility: visible;
     }
     .newTransaction{
         width: 80px;
