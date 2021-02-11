@@ -51,6 +51,12 @@ h2{
     display: inline-block;
     margin: .8rem;
 }
+.new.button:hover{
+    padding: .5rem;
+    transform: translateX(10px) translateY(-8px);
+    background-image: linear-gradient( 60deg,  rgba(33,103,43,1) 11.3%, rgba(117,162,61,1) 91.1% );
+    color: #ffffff; 
+}
 /* style of <a> and <button> */
 a{
     color: #28cc12d0;
@@ -223,6 +229,7 @@ input {
 }
 input:hover{
     border-bottom: 2px solid transparent;
+    border-radius: .5rem;
     border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     border-image-slice: 1;
 }
@@ -303,6 +310,7 @@ footer{
         position: initial;
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         padding-top: 1rem;
         opacity: 1;
         visibility: visible;
