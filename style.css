@@ -67,7 +67,7 @@ button{
     height: 50px;
     border: none;
     font-weight: 700;
-    background: #00fb69;
+    background: #26c568;
     color: #ffffff;
     padding: 0;
     border-radius: .5rem;
@@ -83,6 +83,7 @@ button:hover{
 .button.cancel{
     width: 100%;
     color: #ffffff;
+    font-weight: 700;
     background: #f92121;
     background: radial-gradient(circle, #f92121 96%, #9a1c38 100%);
     border-radius: .5rem;
@@ -92,12 +93,12 @@ button:hover{
     align-items: center;
     opacity: .9;
     font-weight: 700;
+    transition: .9s;
 }
 .button.cancel:hover{
     opacity: 1;
     background: radial-gradient(circle, #fa1b1b 45%, #ac1234 100%);
     color: white;
-    transition: .9s;
 }
 /* card */
 .card{
@@ -124,7 +125,7 @@ button:hover{
 }
 .card.total.changeColor{
     background: #f92121;
-    background: radial-gradient(circle, #f92121 45%, #9a1c38 100%);
+    background: radial-gradient(circle, #f92121 45%, #9a1c38 95%);
     color: #fff;
 }
 /* Table */
@@ -176,7 +177,8 @@ td.expense{
     color: red;
 }
 /* modal */
-.modal-overlay {
+.modal-overlay,
+.layerMensage{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -189,7 +191,8 @@ td.expense{
     visibility: hidden;
     z-index: 999;
 }
-.modal-overlay.active {
+.modal-overlay.active,
+.layerMensage.active {
     opacity: 1;
     visibility: visible;
 }
@@ -218,7 +221,22 @@ input {
     padding: 0.8rem;
     width: 100%;
 }
-
+input:hover{
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    border-image-slice: 1;
+}
+input:focus{
+    animation: 3s input;
+    outline: 0;
+}
+@keyframes input{
+    0%  {border:solid 0px}
+    25% {border-bottom: 4px solid transparent;border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);border-image-slice: 1;}
+    50% {border-right: 4px solid transparent;border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);border-image-slice: 1;}
+    75% {border-top: 4px solid transparent;border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);border-image-slice: 1;}
+    100% {border-left: 4px solid transparent;border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);border-image-slice: 1;}
+}
 .input-group {
     margin-top: 0.8rem;    
 }
@@ -230,6 +248,7 @@ input {
     justify-content: space-between;
     align-items: center;
 }
+/* new transaction button */
 #newTransaction{
     position: fixed;
     opacity: 0;
@@ -237,6 +256,31 @@ input {
 }
 .newTransaction{
     visibility: hidden;
+}
+/* mensage */
+.layerMensage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mensage{
+    background: #e1e0e0;
+    padding: 2.4rem;
+}
+.mensage  p:first-child{
+    font-size: 2rem;
+}
+.mensage p:last-child{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.mensage p a{
+    font-size: 14px;
+    color: #7c4d5e;
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
 }
 /* footer */
 footer{
@@ -282,7 +326,6 @@ footer{
     .newTransaction:hover{
         cursor: pointer;
         transform: rotate(180deg); 
-        transition: .9s;
     }
     .newTransaction img{
         height: 40px;

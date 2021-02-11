@@ -10,6 +10,16 @@ const Modal = {
     }
 
 }
+const layer = {
+    open() {
+        document.querySelector('.layerMensage')
+            .classList.add('active')
+    },
+    close() {
+        document.querySelector('.layerMensage')
+            .classList.remove('active')
+    }
+}
 const storage = {
     get(){
         return JSON.parse(localStorage.getItem('dev.finances:transactions')) || [] 
@@ -51,7 +61,8 @@ const Transaction = {
     total() {
         let total = Transaction.incomes() + Transaction.expenses();
         if (total < 0) {
-            document.querySelector('.card.total').classList.add('changeColor')      
+            document.querySelector('.card.total').classList.add('changeColor')   
+            layer.open()  
         }else{
             document.querySelector('.card.total').classList.remove('changeColor') 
         }
