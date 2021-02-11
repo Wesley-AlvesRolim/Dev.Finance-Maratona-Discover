@@ -254,9 +254,6 @@ input:focus{
     opacity: 0;
     visibility: hidden;
 }
-.newTransaction{
-    visibility: hidden;
-}
 /* mensage */
 .layerMensage{
     display: flex;
