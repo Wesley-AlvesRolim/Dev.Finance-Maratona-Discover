@@ -228,21 +228,17 @@ input {
     width: 100%;
 }
 input:hover{
-    border-bottom: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: .5rem;
     border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     border-image-slice: 1;
 }
 input:focus{
-    animation: 3s input;
     outline: 0;
-}
-@keyframes input{
-    0%  {border:solid 0px}
-    25% {border-bottom: 4px solid transparent;border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);border-image-slice: 1;}
-    50% {border-right: 4px solid transparent;border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);border-image-slice: 1;}
-    75% {border-top: 4px solid transparent;border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);border-image-slice: 1;}
-    100% {border-left: 4px solid transparent;border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);border-image-slice: 1;}
+    border: 2px solid transparent;
+    border-radius: .5rem;
+    border-image: linear-gradient(25deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    border-image-slice: 1;
 }
 .input-group {
     margin-top: 0.8rem;    
