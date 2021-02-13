@@ -163,8 +163,8 @@ table tbody tr{
 table tbody tr:hover{
     opacity: 1;
 }
-table thead tr:nth-child(4),
-table tbody td:nth-child(4){
+table thead tr:nth-child(5),
+table tbody td:nth-child(5){
     border-radius: 0 .8rem .8rem 0;
     cursor: pointer;
 }
@@ -172,6 +172,10 @@ table tbody td:nth-child(4){
 table thead tr:nth-child(1),
 table tbody td:nth-child(1){
     border-radius: .8rem 0 0 .8rem;
+}
+table tbody tr:nth-child(4),
+table tbody td:nth-child(4){
+    cursor: pointer;
 }
 td.description{
     color: #363F5F;
@@ -239,7 +243,7 @@ input:focus{
     border-radius: .5rem;
     border-image: linear-gradient(25deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     border-image-slice: 1;
-}
+} 
 .input-group {
     margin-top: 0.8rem;    
 }
@@ -281,6 +285,8 @@ input:focus{
     display: flex;
     justify-content: flex-end;
     margin: 1rem;
+    opacity: 0;
+    visibility: hidden;
 }
 /* footer */
 footer{

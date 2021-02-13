@@ -2,11 +2,12 @@ const Modal = {
     open() {
         document.querySelector('.modal-overlay')
             .classList.add('active')
+        form.clearFields()
     },
     close() {
         document.querySelector('.modal-overlay')
             .classList.remove('active')
-
+        form.clearFields()
     }
 
 }
@@ -30,11 +31,6 @@ const storage = {
 }
 const Transaction = {
     all: storage.get(),
-      /* [
-        { id: 1, description: 'Luz', amount: -80000, date: '26/01/2021' },
-        { id: 2, description: 'Criação website', amount: 500000, date: '26/01/2021' },
-        { id: 3, description: 'Internet', amount: -10000, date: '26/01/2021' },
-    ],//array dos dados da tabela  */
     add(transaction) {
         Transaction.all.push(transaction)
         app.reload()
@@ -85,6 +81,21 @@ const table = {
         app.reload() /* o app reload foi usado por causa do cleanUp e para rodar novamente o init() */
 
     },
+    modify(index){ 
+        let modify = Transaction.all.slice(index,index + 1)
+        let reducer = modify.reduce(totalArray => {
+            return totalArray
+        })
+        Modal.open()
+        document.querySelector('input#description').value = reducer.description
+        document.querySelector('input#amount').value = reducer.amount / 100
+        document.querySelector('input#date').value = reducer.date
+        console.log(reducer.date);
+        document.getElementById('submitButton').onclick = function(){remove()}
+        function remove() {
+            Transaction.all.splice(index,1)
+        }
+    },
     innerHTMLTransaction(transaction, index) {
         const CSS = transaction.amount > 0 ? 'income' : 'expense';//uso do se e senãp       
         const Amount = utils.formatCurrency(transaction.amount);
@@ -92,6 +103,7 @@ const table = {
         <td class="description">${(transaction.description)}</td>
         <td class= "${CSS}">${Amount}</td>
         <td class="date">${transaction.date}</td>
+        <td><img src="/assets/edit.svg" alt="Modifique esta transação" onclick= "table.modify(${index})"></td>
         <td><img src="/assets/minus.svg" alt="Remover esta transação"  onclick= "table.remove(${index})"></td>`
         return html
     },
