@@ -53,7 +53,7 @@ h2{
     display: inline-block;
     margin: .8rem;
 }
-.new.button:hover:target{
+.new.button:hover:focus{
     padding: .5rem;
     transform: translateX(10px) translateY(-8px);
     background-image: linear-gradient( 60deg,  rgba(33,103,43,1) 11.3%, rgba(117,162,61,1) 91.1% );
