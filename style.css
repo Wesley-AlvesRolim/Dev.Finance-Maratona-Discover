@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box
+    ;
 }
 body{
     font-family: 'Rubik', sans-serif;
@@ -69,6 +71,7 @@ a:hover{
     text-decoration-color: #21fa05;
 }
 button{
+    margin: 0 0 0 .5rem;
     width: 100%;
     height: 50px;
     border: none;
@@ -87,6 +90,7 @@ button:hover{
     opacity: 1;
 }
 .button.cancel{
+    margin: 0 .5rem 0 0;
     width: 100%;
     color: #ffffff;
     font-weight: 700;
@@ -98,7 +102,6 @@ button:hover{
     justify-content: center;
     align-items: center;
     opacity: .9;
-    font-weight: 700;
     transition: .9s;
 }
 .button.cancel:hover{
@@ -244,16 +247,16 @@ input:focus{
     border-image: linear-gradient(25deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     border-image-slice: 1;
 } 
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .input-group {
     margin-top: 0.8rem;    
 }
 .input-group small.help {
     opacity: 0.4;
-}
-.input-group.actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 /* new transaction button */
 #newTransaction{
@@ -293,7 +296,13 @@ footer{
     padding: 2rem 0 .5rem;
     text-align: center;
     color: #363F5F;
+    opacity: .9;
+}
+footer a{
     opacity: .8;
+}
+footer a:hover{
+    opacity: 1;
 }
 /* resposividade */
 @media (min-width:800px){

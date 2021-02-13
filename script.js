@@ -87,10 +87,10 @@ const table = {
             return totalArray
         })
         Modal.open()
+        let reducerDate = reducer.date
         document.querySelector('input#description').value = reducer.description
         document.querySelector('input#amount').value = reducer.amount / 100
-        document.querySelector('input#date').value = reducer.date
-        console.log(reducer.date);
+        document.querySelector('input#date').value = utils.reverseDate(reducerDate)
         document.getElementById('submitButton').onclick = function(){remove()}
         function remove() {
             Transaction.all.splice(index,1)
@@ -125,6 +125,10 @@ const utils = {
     format (date) {
         const DATE = date.split('-')
         return `${DATE[2]}/${DATE[1]}/${DATE[0]}`
+    },
+    reverseDate(reducerDate){
+        const change = reducerDate.split('/')
+        return `${change[2]}-${change[1]}-${change[0]}`
     },
     formatCurrency(value) {
         const signal = Number(value) < 0 ? "-" : ""
