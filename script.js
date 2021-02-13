@@ -94,6 +94,7 @@ const table = {
         document.getElementById('submitButton').onclick = function(){remove()}
         function remove() {
             Transaction.all.splice(index,1)
+            app.reload()
         }
     },
     innerHTMLTransaction(transaction, index) {
