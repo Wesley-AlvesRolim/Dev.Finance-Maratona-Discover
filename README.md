@@ -13,8 +13,9 @@
 
    <br>
    <div style="width: 100vw;">
+   <p>To go into the app click</p>
     <a href="https://wesleyfinance.netlify.app/"
-    style="background-color: green; padding: 1rem 2rem; color:azure; border-radius: 5rem; text-align: center; align-items: center;">Demo App</a>
+    style="background-color: green; padding: 1rem 2rem; color:azure; border-radius: 5rem; text-align: center; align-items: center;">here</a>
    </div>
     <br>
 
