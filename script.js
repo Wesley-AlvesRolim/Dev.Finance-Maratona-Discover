@@ -2,14 +2,12 @@ const Modal = {
     open() {
         document.querySelector('.modal-overlay')
             .classList.add('active')
-        form.clearFields()
     },
     close() {
         document.querySelector('.modal-overlay')
             .classList.remove('active')
         form.clearFields()
     }
-
 }
 const layer = {
     open() {
@@ -22,11 +20,32 @@ const layer = {
     }
 }
 const storage = {
-    get(){
-        return JSON.parse(localStorage.getItem('dev.finances:transactions')) || [] 
+    get() {
+        return JSON.parse(localStorage.getItem('dev.finances:transactions')) || []
     },
-    set(transactions){
+    set(transactions) {
         localStorage.setItem('dev.finances:transactions', JSON.stringify(transactions))
+    }
+}
+const input = {
+    select: document.querySelector('.input-group.actions'),
+    clear() {
+        this.select.innerHTML = this.originInput()
+    },
+    addInput(index) {
+        this.select.innerHTML = this.NewInput(index)
+    },
+    NewInput(index) {
+        const html = `
+        <a href="#" class="button cancel" onclick="Modal.close();input.clear()">Cancelar</a>
+        <button onclick="Transaction.all.splice(${index},1)">Enviar</button>`
+        return html
+    },
+    originInput() {
+        const html = `
+        <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
+        <button>Enviar</button>`
+        return html
     }
 }
 const Transaction = {
@@ -34,6 +53,14 @@ const Transaction = {
     add(transaction) {
         Transaction.all.push(transaction)
         app.reload()
+    },
+    remove(index) {
+        Transaction.all.splice(
+            index, /* elemento que sera usado */
+            1 /* quantidade de elementos */
+        )
+        app.reload() /* o app reload foi usado por causa do cleanUp e para rodar novamente o init() */
+
     },
     incomes() {
         let income = 0;
@@ -57,10 +84,10 @@ const Transaction = {
     total() {
         let total = Transaction.incomes() + Transaction.expenses();
         if (total < 0) {
-            document.querySelector('.card.total').classList.add('changeColor')   
-            layer.open()  
-        }else{
-            document.querySelector('.card.total').classList.remove('changeColor') 
+            document.querySelector('.card.total').classList.add('changeColor')
+            layer.open()
+        } else {
+            document.querySelector('.card.total').classList.remove('changeColor')
         }
         return total
     },
@@ -73,29 +100,17 @@ const table = {
         tr.dataset.index = index
         table.tableBody.appendChild(tr)
     },
-    remove(index) {
-        Transaction.all.splice(
-            index, /* elemento que sera usado */
-            1 /* quantidade de elementos */
-        )
-        app.reload() /* o app reload foi usado por causa do cleanUp e para rodar novamente o init() */
-
-    },
-    modify(index){ 
-        let modify = Transaction.all.slice(index,index + 1)
-        let reducer = modify.reduce(totalArray => {
+    edit(index) {
+        Modal.open()
+        let edit = Transaction.all.slice(index, index + 1)
+        let reducer = edit.reduce(totalArray => {
             return totalArray
         })
-        Modal.open()
         let reducerDate = reducer.date
-        document.querySelector('input#description').value = reducer.description
-        document.querySelector('input#amount').value = reducer.amount / 100
-        document.querySelector('input#date').value = utils.reverseDate(reducerDate)
-        document.getElementById('submitButton').onclick = function(){remove()}
-        function remove() {
-            Transaction.all.splice(index,1)
-            app.reload()
-        }
+        form.description.value = reducer.description,
+            form.amount.value = reducer.amount / 100,
+            form.date.value = utils.reverseDate(reducerDate)
+        input.addInput(index)
     },
     innerHTMLTransaction(transaction, index) {
         const CSS = transaction.amount > 0 ? 'income' : 'expense';//uso do se e senãp       
@@ -104,8 +119,8 @@ const table = {
         <td class="description">${(transaction.description)}</td>
         <td class= "${CSS}">${Amount}</td>
         <td class="date">${transaction.date}</td>
-        <td><img src="/assets/edit.svg" alt="Modifique esta transação" onclick= "table.modify(${index})"></td>
-        <td><img src="/assets/minus.svg" alt="Remover esta transação"  onclick= "table.remove(${index})"></td>`
+        <td><img src="./assets/pencil.svg" alt="Modifique esta transação" id="edit" onclick= "table.edit(${index})"></td>
+        <td><img src="/assets/minus.svg" alt="Remover esta transação" id="remove" onclick= "Transaction.remove(${index})"></td>`
         return html
     },
     updateBalance() {
@@ -118,15 +133,15 @@ const table = {
     }
 }
 const utils = {
-    formatAmount(amount){
+    formatAmount(amount) {
         amount = amount * 100
         return Math.round(amount)
     },
-    format (date) {
+    format(date) {
         const DATE = date.split('-')
         return `${DATE[2]}/${DATE[1]}/${DATE[0]}`
     },
-    reverseDate(reducerDate){
+    reverseDate(reducerDate) {
         const change = reducerDate.split('/')
         return `${change[2]}-${change[1]}-${change[0]}`
     },
@@ -150,29 +165,28 @@ const form = {
             amount: form.amount.value,
             date: form.date.value,
         }
-        
+
     },
     validateField() {
         const description = form.getValue().description;
         const amount = form.getValue().amount;
         const date = form.getValue().date;
-        if (
-            description.trim() === "" ||
+        if (description.trim() === "" ||
             amount.trim() === "" ||
-            date.trim() === "" ) {
-            throw new Error('Por favor, preencha todos os campos')
+            date.trim() === "") {
+            throw new Error('Por favor, preencha todos os campos!')
         }
     },
-    formatValues(){
-        let {description,amount,date} = this.getValue()
-        amount = utils.formatAmount(amount);  
+    formatValues() {
+        let { description, amount, date } = this.getValue()
+        amount = utils.formatAmount(amount);
         date = utils.format(date);
-        return {description,amount,date}
+        return { description, amount, date }
     },
-    clearFields(){
+    clearFields() {
         form.description.value = '',
-        form.amount.value = '',
-        form.date.value = ''
+            form.amount.value = '',
+            form.date.value = ''
     },
     submit(event) {
         event.preventDefault()
@@ -183,15 +197,40 @@ const form = {
             form.clearFields()
             Modal.close()
         } catch (error) {
-            alert(error.message)
+            setTimeout(() => {
+                document.querySelector('.error').classList.add('active')
+                document.querySelector('.error.active span').innerHTML = error.message
+                if (form.description.value.trim() == "") {
+                    form.description.classList.add('red')
+                } else {
+                    form.description.classList.remove('red')
+                }
+                if (form.amount.value.trim() === "") {
+                    form.amount.classList.add('red')
+                } else {
+                    form.amount.classList.remove('red')
+                }
+                if (form.date.value.trim() === "") {
+                    form.date.classList.add('red')
+                } else {
+                    form.date.classList.remove('red')
+                }
+            }, 0)
+            setTimeout(() => {
+                document.querySelector('.error').classList.remove('active')
+                const removeBorder = document.querySelectorAll('.border.red')
+                removeBorder[0].classList.remove('red')
+                removeBorder[1].classList.remove('red')
+                removeBorder[2].classList.remove('red')
+            }, 3000)
         }
     },
 }
 const app = {
     init() {
         Transaction.all.forEach(
-            (transaction,index) => {
-                table.addTransaction(transaction,index)
+            (transaction, index) => {
+                table.addTransaction(transaction, index)
             })
         table.updateBalance()
         storage.set(Transaction.all)

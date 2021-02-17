@@ -46,15 +46,15 @@
 
         <section id="transactions">
             <h2 class="hide">Transações</h2>
-            <a href="#" class="new button" onclick="Modal.open()">Nova transação</a>
+            <a href="#" class="new button" onclick="Modal.open()">+ Nova transação</a>
             <table id="data-table">
                 <thead>
                     <tr>
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th>Data</th>
-                        <th></th>
-                        <th></th>
+                        <th><img src="./assets/editIcon.svg"></th>
+                        <th><img src="./assets/trash.svg" alt="exclua uma transação"></th>
                         <!--add a image-->
                     </tr>
                 </thead>
@@ -76,21 +76,21 @@
                 <h2>Nova transação</h2>
                 <div class="input-group">
                     <label class="sr-only" for="description">Descrição</label>
-                    <input type="text" name="description" id="description" placeholder="Descrição">
+                    <input type="text" name="description" class="border" id="description" placeholder="Descrição">
                 </div>
                 <div class="input-group">
                     <label class="sr-only" for="amount">Valor</label>
-                    <input type="number" step="0.01" name="amount" id="amount" placeholder="0,00">
-                    <p>Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais.</p>
+                    <input type="number" step="0.01" name="amount" class="border" id="amount" placeholder="0,00">
+                    <p>Use o sinal negativo (-) para despesas e vírgula (,) para casas decimais.</p>
                 </div>
                 <div class="input-group">
                     <label class="sr-only" for="date">Data</label>
-                    <input type="date" name="date" id="date" placeholder="01/01/2021">
+                    <input type="date" name="date" class="border" id="date" placeholder="01/01/2021">
                 </div>
 
                 <div class="input-group actions">
                     <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
-                    <button id="submitButton" type="submit" onsubmit="table.addTransaction()">Enviar</button>
+                    <button id="submitButton">Enviar</button>
                 </div>
             </form>
         </div>
@@ -103,6 +103,9 @@
             </p>
             <p>clique na tela para sair!</p>
         </div>
+    </div>
+    <div class="error">
+        <span></span>
     </div>
     <footer>
         <a class="github" href="https://github.com/Wesley-AlvesRolim" target="_blank">
