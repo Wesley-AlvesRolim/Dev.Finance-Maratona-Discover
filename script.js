@@ -31,6 +31,7 @@ const input = {
     select: document.querySelector('.input-group.actions'),
     clear() {
         this.select.innerHTML = this.originInput()
+        app.reload()
     },
     addInput(index) {
         this.select.innerHTML = this.NewInput(index)

@@ -212,7 +212,7 @@ td.expense{
 }
 #edit:hover{
     transform:scale(2.5) rotate(360deg) rotateY(360deg);    
-    transition: .7s;
+    transition: .9s;
 }
 #remove{
     transition: .7s;
