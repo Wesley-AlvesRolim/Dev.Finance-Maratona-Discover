@@ -125,7 +125,7 @@ button:hover{
 }
 .card:hover{
     transform: translateX(15px) translateY(-8px);
-    box-shadow: -5px 8px 10px black;
+    box-shadow: -5px 6px 20px black;
     transition: .4s;
 }
 .card h3{
