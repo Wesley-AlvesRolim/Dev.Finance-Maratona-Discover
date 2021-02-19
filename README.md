@@ -7,14 +7,13 @@
 
 <br>
 <img src="./assets/Readme.gif" style="max-width:900px;">
-<img src="./assets/READMEimg0.jpg" style="max-width:900px;">  
-<img src="./assets/READMEimg1.jpg" style="max-width:500px;">
 <br>
 
    <br>
    <div style="width: 100vw;">
+   <span>To go into the app click</span>
     <a href="https://wesleyfinance.netlify.app/"
-    style="background-color: green; padding: 1rem 2rem; color:azure; border-radius: 5rem; text-align: center; align-items: center;">Demo App</a>
+    style="background-color: green; padding: 1rem 2rem; color:azure; border-radius: 5rem; text-align: center; align-items: center;">here</a>
    </div>
     <br>
 
