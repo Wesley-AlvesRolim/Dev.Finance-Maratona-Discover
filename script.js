@@ -92,14 +92,14 @@ const Transaction = {
         }
         return total
     },
-}//responsável pela soma dos valores
-const table = {
+}
+const DOM = {
     tableBody: document.querySelector('#data-table tbody'),
     addTransaction(transaction, index) {
         const tr = document.createElement('tr')
         tr.innerHTML = this.innerHTMLTransaction(transaction, index)
         tr.dataset.index = index
-        table.tableBody.appendChild(tr)
+        DOM.tableBody.appendChild(tr)
     },
     edit(index) {
         Modal.open()
@@ -120,7 +120,7 @@ const table = {
         <td class="description">${(transaction.description)}</td>
         <td class= "${CSS}">${Amount}</td>
         <td class="date">${transaction.date}</td>
-        <td><img src="./assets/pencil.svg" alt="Modifique esta transação" id="edit" onclick= "table.edit(${index})"></td>
+        <td><img src="./assets/pencil.svg" alt="Modifique esta transação" id="edit" onclick= "DOM.edit(${index})"></td>
         <td><img src="/assets/minus.svg" alt="Remover esta transação" id="remove" onclick= "Transaction.remove(${index})"></td>`
         return html
     },
@@ -197,6 +197,7 @@ const form = {
             Transaction.add(transaction)
             form.clearFields()
             Modal.close()
+            input.clear()
         } catch (error) {
             setTimeout(() => {
                 document.querySelector('.error').classList.add('active')
@@ -227,18 +228,42 @@ const form = {
         }
     },
 }
+const addCss = {
+    Css() {
+        let sizeTable = Transaction.all.length
+        let styleElement = document.body.appendChild(document.createElement("style"))
+        let cssRules = `
+        .new.button{
+            opacity: 1;
+            visibility: visible;
+        }
+        #newTransaction{
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            visibility: hidden;
+        }
+        `
+        if (sizeTable >= 4) {
+            styleElement.innerHTML = cssRules
+        } else {
+            styleElement.innerHTML = ''
+        }    
+    }
+}
 const app = {
     init() {
         Transaction.all.forEach(
             (transaction, index) => {
-                table.addTransaction(transaction, index)
+                DOM.addTransaction(transaction, index)
             })
-        table.updateBalance()
+        DOM.updateBalance()
         storage.set(Transaction.all)
-        /* table.cleanUp() */
+        addCss.Css()
+        /* DOM.cleanUp() */
     },
     reload() {
-        table.cleanUp()
+        DOM.cleanUp()
         app.init()
     }
 }
