@@ -7,8 +7,6 @@
 
 <br>
 <img src="./assets/Readme.gif" style="max-width:900px;">
-<img src="./assets/READMEimg0.jpg" style="max-width:900px;">  
-<img src="./assets/READMEimg1.jpg" style="max-width:500px;">
 <br>
 
    <br>
