@@ -333,8 +333,11 @@ input:focus{
     display: flex;
     justify-content: flex-end;
     margin: 1rem;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
+}
+.mensage p a:hover{
+    transform: none;
 }
 /* error */
 .error.active{

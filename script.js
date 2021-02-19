@@ -11,9 +11,10 @@ const Modal = {
 }
 const layer = {
     open() {
-        document.querySelector('.layerMensage')
+        setTimeout(() => { 
+            document.querySelector('.layerMensage')
             .classList.add('active')
-    },
+    }, 500)},
     close() {
         document.querySelector('.layerMensage')
             .classList.remove('active')
