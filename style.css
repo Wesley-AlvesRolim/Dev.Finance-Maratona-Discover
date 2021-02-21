@@ -42,6 +42,8 @@ header{
     cursor: pointer;
 }
 .light{
+    position: relative;
+    left: -10px;
     animation: forwards 5s light;
 }
 .light.off{
@@ -57,6 +59,8 @@ header{
     cursor: pointer;
 }
 .dark{
+    position: relative;
+    left: -10px;
     animation: forwards 5s dark;
 }
 .dark.off{
@@ -382,7 +386,7 @@ input:focus{
 }
 /* error */
 .error.active{
-    top: -500px;
+    top: -900px;
     opacity: 1;
     visibility: visible;
 }
@@ -391,7 +395,7 @@ input:focus{
     height: 100%;
     text-align: center;
     position: relative;
-    top: -600px;
+    top: -1000px;
     opacity: 0;
     visibility: hidden;
     z-index: 999;
@@ -405,12 +409,11 @@ input:focus{
     font-size: 18px;
     padding: 2.5rem 1.2rem;
 }
-
 /* footer */
 footer{
     width: 100%;
-    height: 70px;
-    padding: 1rem 0;
+    height: auto;
+    padding: .5rem 0;
     text-align: center;
     color: #363F5F;
     opacity: .9;
@@ -429,6 +432,14 @@ footer{
 @media (min-width:800px){
     html{
         font-size: 14px;
+    }
+    .light{
+        position: relative;
+        left: -20px;
+    }
+    .dark{
+        position: relative;
+        left: -20px;
     }
     #balance{
         display: grid;
