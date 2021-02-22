@@ -37,6 +37,13 @@ header{
     position: relative;
     right: 10px;
 }
+.fa-moon {
+	color: #363f5f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}
 .light:hover{
     animation: infinite 5s light;
     cursor: pointer;
