@@ -1,35 +1,44 @@
+const storageTheme = {
+    getTheme() {
+        return JSON.parse(localStorage.getItem('currentTheme')) || []
+    },
+    setTheme(newTheme) {
+        localStorage.setItem('currentTheme', JSON.stringify(newTheme))
+    }
+}
 const Icon = {
     swithTheme: document.querySelector('#swithTheme'),
-    swap() {
+    lightOn() {
         setTimeout(() => {
             this.swithTheme.innerHTML = `
-            <label for="" onclick="Icon.swap2()">
+            <label for="" onclick="Icon.darkOn()">
             <img class="light" src="https://img.icons8.com/color/344/sun--v1.png" alt="Light" loading="lazy" style="height: 50px"></img>
             <img class ="dark off" src="https://img.icons8.com/fluent-systems-filled/344/fog-night.png" alt="Dark" loading="lazy" style="height: 50px"></img>
             </label>`
         }, 100);
-        darkTheme.body.classList.remove('darkTheme')
-        darkTheme.body.innerHTML = ''
+        darkTheme.body.innerHTML = '' 
+        storageTheme.setTheme(['light'])
     },
-    swap2() {
+    darkOn() {
         setTimeout(() => {
-            this.swithTheme.innerHTML = `<label for="" onclick="Icon.swap()">
+            this.swithTheme.innerHTML = `<label for="" onclick="Icon.lightOn()">
             <img class="light off" src="https://img.icons8.com/color/344/sun--v1.png" alt="Light" loading="lazy" style="height: 50px"></img>
             <img class ="dark" src="https://img.icons8.com/fluent-systems-filled/344/fog-night.png" alt="Dark" loading="lazy" style="height: 50px"></img>
             </label>`
+            storageTheme.setTheme(['dark'])
             darkTheme.css()
         }, 100);
     }
 }
 const darkTheme = {
     body: document.body.appendChild(document.createElement('style')),
-    css(){ 
+    css(){
         const cssRules = `
-        .darkTheme{
+        body{
             background-color: #222222;
             transition: .5s;
         }
-        .darkTheme header{
+        body header{
             background-image: linear-gradient(180deg, #1d480d 80%, #2c6816 90%, #2d8d07 100%);
         }
         .dark{
@@ -91,7 +100,23 @@ const darkTheme = {
             color: #b6b6b6;
         }
         `
-        document.body.classList.add('darkTheme')
         this.body.innerHTML = cssRules
+    },
+}
+const initTheme = {
+    load(){
+        let check = storageTheme.getTheme()
+        switch (check[0]) {
+            case 'light':
+                Icon.lightOn()
+                break;
+            case 'dark':
+                Icon.darkOn()
+                break;
+            default: 
+                Icon.lightOn()
+                break;
+        }
     }
 }
+initTheme.load()

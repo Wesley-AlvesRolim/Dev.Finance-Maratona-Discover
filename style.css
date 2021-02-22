@@ -51,8 +51,8 @@ header{
     transition: .5s;
 }
 @keyframes light{
-    from{transform: rotate(0deg);}
-    to{transform: rotate(360deg);}
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
 }
 .dark:hover{
     animation: infinite 5s dark;
@@ -386,7 +386,7 @@ input:focus{
 }
 /* error */
 .error.active{
-    top: -900px;
+    top: -550px;
     opacity: 1;
     visibility: visible;
 }
@@ -395,7 +395,7 @@ input:focus{
     height: 100%;
     text-align: center;
     position: relative;
-    top: -1000px;
+    top: -800px;
     opacity: 0;
     visibility: hidden;
     z-index: 999;
@@ -483,9 +483,9 @@ footer{
         width: 40px;
     }
     .error.active{
-        top: -550px;
+        top: -350px;
     }
     .error{
-        top: -600px;
+        top: -450px;
     }
 }
