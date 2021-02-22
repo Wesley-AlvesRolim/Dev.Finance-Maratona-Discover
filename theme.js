@@ -77,17 +77,21 @@ const darkTheme = {
             color: #FF0800;
         }
         .modal {
-            background: #5e5c5c;
+            background: #3c3c3c;
+            color: #f5fff6;
+            font-weight: 400;
         }
         h2{
-            color: #191a38; 
+            font-weight: 700;
+            color: #f1fff1;
         }
         input{    
-            background-color: #cecece;
+            background-color: #f5fff6;
         }
         input:hover{
             border: none;
-            box-shadow: .9px .9px .9rem #f7f7f7e0;
+            border-radium: 1rem;
+            box-shadow: .9px .9px 10px #e3cce6;
         }
         input:focus{
             border: none;
@@ -107,11 +111,11 @@ const initTheme = {
     load(){
         let check = storageTheme.getTheme()
         switch (check[0]) {
-            case 'light':
-                Icon.lightOn()
-                break;
             case 'dark':
                 Icon.darkOn()
+                break;
+            case 'light':
+                Icon.lightOn()
                 break;
             default: 
                 Icon.lightOn()
