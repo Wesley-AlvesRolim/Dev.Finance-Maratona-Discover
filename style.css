@@ -386,7 +386,7 @@ input:focus{
 }
 /* error */
 .error.active{
-    top: -550px;
+    top: -700px;
     opacity: 1;
     visibility: visible;
 }
@@ -395,7 +395,7 @@ input:focus{
     height: 100%;
     text-align: center;
     position: relative;
-    top: -800px;
+    top: -900px;
     opacity: 0;
     visibility: hidden;
     z-index: 999;
@@ -483,9 +483,9 @@ footer{
         width: 40px;
     }
     .error.active{
-        top: -350px;
+        top: -518px;
     }
     .error{
-        top: -450px;
+        top: -600px;
     }
 }
