@@ -13,7 +13,7 @@ const Icon = {
             this.swithTheme.innerHTML = `
             <label for="" onclick="Icon.darkOn()">
             <img class="light off" src="https://img.icons8.com/color/344/sun--v1.png" alt="Light" loading="lazy" style="height: 50px"></img>
-            <img class ="dark" src="https://img.icons8.com/fluent-systems-filled/344/fog-night.png" alt="Dark" loading="lazy" style="height: 50px"></img>
+            <img class ="dark" src="https://img.icons8.com/clouds/344/bright-moon.png" alt="Dark" loading="lazy" style="height: 60px"></img>
             </label>`
         }, 100);
         darkTheme.body.innerHTML = '' 
@@ -22,8 +22,8 @@ const Icon = {
     darkOn() {
         setTimeout(() => {
             this.swithTheme.innerHTML = `<label for="" onclick="Icon.lightOn()">
-            <img class="light" src="https://img.icons8.com/color/344/sun--v1.png" alt="Light" loading="lazy" style="height: 50px"></img>
-            <img class ="dark off" src="https://img.icons8.com/fluent-systems-filled/344/fog-night.png" alt="Dark" loading="lazy" style="height: 50px"></img>
+            <img class="light" src="https://img.icons8.com/color/344/sun--v1.png" alt="Light" loading="lazy" style="height: 60px"></img>
+            <img class ="dark off" src="https://img.icons8.com/clouds/344/bright-moon.png" alt="Dark" loading="lazy" style="height: 50px"></img>
             </label>`
             storageTheme.setTheme(['dark'])
             darkTheme.css()
