@@ -38,6 +38,19 @@ const darkTheme = {
             background-color: #222222;
             transition: .5s;
         }
+        *::-webkit-scrollbar{
+            width: 1.2rem;
+        }
+        *::-webkit-scrollbar-track{
+            background: #888888;
+            border: solid 2px #5e5d5d;
+            border-radius: 20px;
+        }
+        *::-webkit-scrollbar-thumb{
+            border-radius: 20px;
+            border: 2px solid #504d4d;
+            background: #302f2f;
+        }
         body header{
             background-image: linear-gradient(180deg, #1d480d 80%, #2c6816 90%, #2d8d07 100%);
         }

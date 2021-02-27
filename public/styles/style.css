@@ -4,6 +4,19 @@
     box-sizing: border-box
     ;
 }
+*::-webkit-scrollbar{
+    width: auto;
+}
+*::-webkit-scrollbar-track{
+    background: #cccccc;
+    border: solid 3px #b1b1b1;
+    border-radius: 20px;
+}
+*::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    border: 1px solid #b1b1b1;
+    background: #e8e2e2;
+}
 body{
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
