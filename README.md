@@ -13,14 +13,13 @@
    <br>
    <div style="width: 100vw;">
    <span>To go into the app click</span>
-    <a href="https://wesleyfinance.netlify.app/"
-    style="background-color: green; padding: 1rem 2rem; color:azure; border-radius: 5rem; text-align: center; align-items: center;">here</a>
+    <a href="https://wesleyfinance.netlify.app/"><h3>here</h3></a>
    </div>
     <br>
 
 # <img class="emoji" alt="rocket" height="30" width="30" src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png"> Technologies <br>
 <p>This project was developed with the following technologies:</p>
 
-- Html5 
-- Css3
-- JavaScript
+- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"> **Html5**
+- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"> **Css3**
+- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png">  **JavaScript**
