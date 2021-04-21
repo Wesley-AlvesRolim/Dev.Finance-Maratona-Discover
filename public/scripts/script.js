@@ -210,8 +210,7 @@ const form = {
         form.date.value = '';
     },
     submit(event) {
-        event.preventDefault()
-        document.querySelector('input[checked]').removeAttribute('checked');
+        event.preventDefault();
         try {
             form.validateField()
             const transaction = form.formatValues()
