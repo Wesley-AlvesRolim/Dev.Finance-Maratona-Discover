@@ -1,20 +1,22 @@
 const Modal = {
     open() {
         document.querySelector('.modal-overlay')
-            .classList.add('active')
+            .classList.add('active');
     },
     close() {
         document.querySelector('.modal-overlay')
-            .classList.remove('active')
-        form.clearFields()
+            .classList.remove('active');
+        document.querySelector('input[checked]').removeAttribute('checked');
+        form.clearFields();
     }
 }
 const layer = {
     open() {
-        setTimeout(() => { 
+        setTimeout(() => {
             document.querySelector('.layerMensage')
-            .classList.add('active')
-    }, 500)},
+                .classList.add('active')
+        }, 500)
+    },
     close() {
         document.querySelector('.layerMensage')
             .classList.remove('active')
@@ -104,18 +106,23 @@ const DOM = {
     },
     edit(index) {
         Modal.open()
-        let edit = Transaction.all.slice(index, index + 1)
+        let edit = Transaction.all.slice(index, index + 1);
         let reducer = edit.reduce(totalArray => {
             return totalArray
-        })
-        let reducerDate = reducer.date
-        form.description.value = reducer.description,
-            form.amount.value = reducer.amount / 100,
-            form.date.value = utils.reverseDate(reducerDate)
+        });
+        let reducerDate = reducer.date;
+        form.description.value = reducer.description;
+        form.amount.value = reducer.amount / 100;
+        form.date.value = utils.reverseDate(reducerDate);
+        if (reducer.typeTransaction === 'income') {
+            document.getElementById('income').setAttribute('checked', '');
+        } else {
+            document.getElementById('expense').setAttribute('checked', '');
+        };
         input.addInput(index)
     },
     innerHTMLTransaction(transaction, index) {
-        const CSS = transaction.amount > 0 ? 'income' : 'expense';//uso do se e senãp       
+        const CSS = transaction.amount > 0 ? 'income' : 'expense'; //uso do se e senão
         const Amount = utils.formatCurrency(transaction.amount);
         const html = `
         <td class="description">${(transaction.description)}</td>
@@ -149,7 +156,7 @@ const utils = {
     },
     formatCurrency(value) {
         const signal = Number(value) < 0 ? "-" : ""
-        //o signal recebe um value do tipo number se for <0 entao(? = entao) recebe "-" senao(: = senao) recebe ""
+            //o signal recebe um value do tipo number se for <0 entao(? = entao) recebe "-" senao(: = senao) recebe ""
         value = String(value).replace(/\D/g, "")
         value = Number(value) / 100
         value = value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
@@ -159,12 +166,21 @@ const utils = {
 const form = {
     description: document.querySelector('input#description'),
     amount: document.querySelector('input#amount'),
+    typeTransaction: document.getElementsByName('transaction-type'),
     date: document.querySelector('input#date'),
 
     getValue() {
+        let typeTransactionValue;
+        this.typeTransaction.forEach(element => {
+            if (!element.checked) {
+                return;
+            }
+            typeTransactionValue = element.value;
+        });
         return {
             description: form.description.value,
             amount: form.amount.value,
+            typeTransaction: typeTransactionValue,
             date: form.date.value,
         }
 
@@ -180,10 +196,14 @@ const form = {
         }
     },
     formatValues() {
-        let { description, amount, date } = this.getValue()
+        let { description, amount, typeTransaction, date } = this.getValue();
         amount = utils.formatAmount(amount);
+        amount = typeTransaction === 'income' &&
+            amount < 0 ? amount * -1 : amount;
+        amount = typeTransaction === 'expense' &&
+            amount > 0 ? amount - (2 * amount) : amount;
         date = utils.format(date);
-        return { description, amount, date }
+        return { description, amount, typeTransaction, date }
     },
     clearFields() {
         form.description.value = '',
@@ -201,22 +221,16 @@ const form = {
             input.clear()
         } catch (error) {
             setTimeout(() => {
-                document.querySelector('.error').classList.add('active')
-                document.querySelector('.error.active span').innerHTML = error.message
+                document.querySelector('.error').classList.add('active');
+                document.querySelector('.error.active span').innerHTML = error.message;
                 if (form.description.value.trim() == "") {
                     form.description.classList.add('red')
-                } else {
-                    form.description.classList.remove('red')
                 }
                 if (form.amount.value.trim() === "") {
                     form.amount.classList.add('red')
-                } else {
-                    form.amount.classList.remove('red')
                 }
                 if (form.date.value.trim() === "") {
                     form.date.classList.add('red')
-                } else {
-                    form.date.classList.remove('red')
                 }
             }, 0)
             setTimeout(() => {
@@ -249,7 +263,7 @@ const addCss = {
             styleElement.innerHTML = cssRules
         } else {
             styleElement.innerHTML = ''
-        }    
+        }
     }
 }
 const app = {
@@ -261,7 +275,7 @@ const app = {
         DOM.updateBalance()
         storage.set(Transaction.all)
         addCss.Css()
-        /* DOM.cleanUp() */
+            /* DOM.cleanUp() */
     },
     reload() {
         DOM.cleanUp()
