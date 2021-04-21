@@ -6,7 +6,6 @@ const Modal = {
     close() {
         document.querySelector('.modal-overlay')
             .classList.remove('active');
-        document.querySelector('input[checked]').removeAttribute('checked');
         form.clearFields();
     }
 }
@@ -206,12 +205,13 @@ const form = {
         return { description, amount, typeTransaction, date }
     },
     clearFields() {
-        form.description.value = '',
-            form.amount.value = '',
-            form.date.value = ''
+        form.description.value = '';
+        form.amount.value = '';
+        form.date.value = '';
     },
     submit(event) {
         event.preventDefault()
+        document.querySelector('input[checked]').removeAttribute('checked');
         try {
             form.validateField()
             const transaction = form.formatValues()
