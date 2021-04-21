@@ -59,23 +59,17 @@ header {
     right: 10px;
 }
 
-.fa-moon {
-    color: #363f5f;
-}
-
-.fa-sun {
-    color: #f39c12;
-}
-
 .light:hover {
     animation: infinite 5s light;
     cursor: pointer;
+    -webkit-animation: infinite 5s light;
 }
 
 .light {
     position: relative;
     left: -10px;
     animation: forwards 5s light;
+    -webkit-animation: forwards 5s light;
 }
 
 .light.off {
@@ -454,6 +448,20 @@ input:focus {
 
 .input-group small.help {
     opacity: 0.4;
+}
+
+.transaction-type {
+    font-size: 93.75%;
+    font-weight: 500;
+}
+
+.transaction-type~input {
+    width: 20px;
+    height: 15px;
+}
+
+.transaction-type~label {
+    font-size: 1.1rem;
 }
 
 
