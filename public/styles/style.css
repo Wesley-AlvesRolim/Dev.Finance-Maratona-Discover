@@ -202,7 +202,8 @@ button:hover {
     opacity: 1;
 }
 
-.button.cancel {
+a.button.cancel,
+a.button.cancel.in-modal {
     margin: 0 .5rem 0 0;
     width: 100%;
     color: #ffffff;
@@ -215,15 +216,29 @@ button:hover {
     justify-content: center;
     align-items: center;
     opacity: .9;
+    visibility: visible;
     transition: .8s;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    -webkit-transition: .8s;
+    -moz-transition: .8s;
+    -ms-transition: .8s;
+    -o-transition: .8s;
 }
 
-.button.cancel:hover {
+a.button.cancel:hover,
+a.button.cancel.in-modal:hover {
     opacity: 1;
     background: radial-gradient(circle, #fa1b1b 45%, #ac1234 100%);
     color: white;
     transform: translateX(10px) translateY(-8px);
     color: #ffffff;
+    -webkit-transform: translateX(10px) translateY(-8px);
+    -moz-transform: translateX(10px) translateY(-8px);
+    -ms-transform: translateX(10px) translateY(-8px);
+    -o-transform: translateX(10px) translateY(-8px);
 }
 
 
@@ -316,6 +331,10 @@ table tbody td:nth-child(5) {
 table thead tr:nth-child(1),
 table tbody td:nth-child(1) {
     border-radius: .8rem 0 0 .8rem;
+    -webkit-border-radius: .8rem 0 0 .8rem;
+    -moz-border-radius: .8rem 0 0 .8rem;
+    -ms-border-radius: .8rem 0 0 .8rem;
+    -o-border-radius: .8rem 0 0 .8rem;
 }
 
 table tbody tr:nth-child(4),
@@ -340,19 +359,39 @@ td.expense {
     width: 2rem;
     transform: scale(2);
     transition: .7s;
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
 }
 
 #edit:hover {
     transform: scale(2.5) rotate(360deg) rotateY(360deg);
     transition: .9s;
+    -webkit-transition: .9s;
+    -moz-transition: .9s;
+    -ms-transition: .9s;
+    -o-transition: .9s;
+    -webkit-transform: scale(2.5) rotate(360deg) rotateY(360deg);
+    -moz-transform: scale(2.5) rotate(360deg) rotateY(360deg);
+    -ms-transform: scale(2.5) rotate(360deg) rotateY(360deg);
+    -o-transform: scale(2.5) rotate(360deg) rotateY(360deg);
 }
 
 #remove {
     transition: .7s;
+    -webkit-transition: .7s;
+    -moz-transition: .7s;
+    -ms-transition: .7s;
+    -o-transition: .7s;
 }
 
 #remove:hover {
     transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
 }
 
 
@@ -372,6 +411,10 @@ td.expense {
     visibility: hidden;
     z-index: 999;
     transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
 }
 
 .modal-overlay.active,
@@ -420,6 +463,10 @@ input:hover {
     border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     border-image-slice: 1;
     box-shadow: .9px .9px .9rem #c4c4c4cb;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
 }
 
 input:focus {
@@ -428,6 +475,10 @@ input:focus {
     border-radius: .5rem;
     border-image: linear-gradient(25deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     border-image-slice: 1;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
 }
 
 .border.red {
@@ -511,6 +562,10 @@ input:focus {
 
 .mensage p a:hover {
     transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
 }
 
 
@@ -532,6 +587,10 @@ input:focus {
     visibility: hidden;
     z-index: 999;
     transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
 }
 
 .error span {
@@ -541,6 +600,10 @@ input:focus {
     border-radius: .5rem;
     font-size: 18px;
     padding: 2.5rem 1.2rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
 }
 
 
@@ -613,6 +676,14 @@ footer {
         visibility: visible;
         transform: rotate(-90deg);
         transition: .9s;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
     }
     .newTransaction:hover {
         cursor: pointer;

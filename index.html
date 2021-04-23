@@ -47,7 +47,7 @@
 
         <section id="transactions">
             <h2 class="hide">Transações</h2>
-            <a href="#" class="new button" onclick="Modal.open()">+ Nova transação</a>
+            <a href="#" class="new button">+ Nova transação</a>
             <table id="data-table">
                 <thead>
                     <tr>
@@ -64,15 +64,15 @@
         </section>
         <div id="newTransaction">
             <div class="before">
-                <div class="newTransaction" onclick="Modal.open()">
-                    <img src=".//assets/plusButton.svg" alt="Adicionar transação">
+                <div class="newTransaction">
+                    <img class="newTransactionImg" src="./assets/plusButton.svg" alt="Adicionar transação">
                 </div>
             </div>
         </div>
     </main>
     <div class="modal-overlay">
         <div class="modal">
-            <form id="form" onsubmit="form.submit(event)">
+            <form id="form">
                 <h2>Nova transação</h2>
                 <div class="input-group">
                     <label class="sr-only" for="description">Descrição</label>
@@ -85,9 +85,9 @@
                 </div>
                 <div class="input-group">
                     <p class="transaction-type">Tipo de transação:</p>
-                    <input type="radio" id="income" name="transaction-type" value="income" required>
+                    <input type="radio" id="income" name="transaction-type" value="income">
                     <label for="income">Entrada</label></br>
-                    <input type="radio" id="expense" name="transaction-type" value="expense">
+                    <input type="radio" id="expense" name="transaction-type" value="expense" required>
                     <label for="expense">Saída</label>
                 </div>
                 <div class="input-group">
@@ -96,13 +96,13 @@
                 </div>
 
                 <div class="input-group actions">
-                    <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
+                    <a href="#" class="button cancel">Cancelar</a>
                     <button>Enviar</button>
                 </div>
             </form>
         </div>
     </div>
-    <div class="layerMensage" onclick="layer.close()">
+    <div class="layerMensage">
         <div class="mensage">
             <p>&#10077Pense bem no que vai gastar, <br> porque, tem pessoas, que,<br> quando recebem dinheiro,<br> usam em tantas besteiras!</p>
             <p>
@@ -124,7 +124,7 @@
         </a>
         <p>Wesley-AlvesRolim</p>
     </footer>
-    <script src="./public/scripts/script.js"></script>
+    <script src="./public/bundle.js"></script>
     <script src="./public/scripts/theme.js"></script>
 
 </body>
