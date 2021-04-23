@@ -42,7 +42,7 @@ export const Transaction = {
     },
 }
 const check = total => {
-    if (total <= 0 && limit <= 3) {
+    if (total < 0 && limit <= 3) {
         document.querySelector('.card.total').classList.add('changeColor')
         setTimeout(() => {
             layer.open()
