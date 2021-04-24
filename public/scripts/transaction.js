@@ -42,13 +42,16 @@ export const Transaction = {
     },
 }
 const check = total => {
+    const totalCard = document.querySelector('.card.total');
     if (total < 0 && limit <= 3) {
-        document.querySelector('.card.total').classList.add('changeColor')
+        totalCard.classList.add('changeColor')
         setTimeout(() => {
             layer.open()
         }, 500);
         limit++
+    } else if (total < 0) {
+        totalCard.classList.add('changeColor')
     } else {
-        document.querySelector('.card.total').classList.remove('changeColor')
+        totalCard.classList.remove('changeColor')
     }
 }
