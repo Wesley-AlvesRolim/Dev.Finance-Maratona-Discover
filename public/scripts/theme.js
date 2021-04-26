@@ -1,11 +1,11 @@
 const storageTheme = {
     getTheme() {
-        return JSON.parse(localStorage.getItem('currentTheme')) || []
+        return JSON.parse(localStorage.getItem('currentTheme')) || [];
     },
     setTheme(newTheme) {
-        localStorage.setItem('currentTheme', JSON.stringify(newTheme))
+        localStorage.setItem('currentTheme', JSON.stringify(newTheme));
     }
-}
+};
 const Icon = {
     swithTheme: document.querySelector('#swithTheme'),
     lightOn() {
@@ -14,25 +14,25 @@ const Icon = {
             <label for="" onclick="Icon.darkOn()">
             <img class="light off" src="https://img.icons8.com/color/344/sun--v1.png" alt="Light" loading="lazy" style="height: 50px"></img>
             <img class ="dark" src="https://img.icons8.com/clouds/344/bright-moon.png" alt="Dark" loading="lazy" style="height: 60px"></img>
-            </label>`
+            </label>`;
         }, 100);
-        darkTheme.body.innerHTML = '' 
-        storageTheme.setTheme(['light'])
+        darkTheme.body.innerHTML = '';
+        storageTheme.setTheme(['light']);
     },
     darkOn() {
         setTimeout(() => {
             this.swithTheme.innerHTML = `<label for="" onclick="Icon.lightOn()">
             <img class="light" src="https://img.icons8.com/color/344/sun--v1.png" alt="Light" loading="lazy" style="height: 60px"></img>
             <img class ="dark off" src="https://img.icons8.com/clouds/344/bright-moon.png" alt="Dark" loading="lazy" style="height: 50px"></img>
-            </label>`
-            storageTheme.setTheme(['dark'])
-            darkTheme.css()
+            </label>`;
+            storageTheme.setTheme(['dark']);
+            darkTheme.css();
         }, 100);
     }
-}
+};
 const darkTheme = {
     body: document.body.appendChild(document.createElement('style')),
-    css(){
+    css() {
         const cssRules = `
         body{
             background-color: #222222;
@@ -116,24 +116,24 @@ const darkTheme = {
             background: #3c3c3c;
             color: #b6b6b6;
         }
-        `
-        this.body.innerHTML = cssRules
+        `;
+        this.body.innerHTML = cssRules;
     },
-}
+};
 const initTheme = {
-    load(){
-        let check = storageTheme.getTheme()
+    load() {
+        let check = storageTheme.getTheme();
         switch (check[0]) {
             case 'dark':
-                Icon.darkOn()
+                Icon.darkOn();
                 break;
             case 'light':
-                Icon.lightOn()
+                Icon.lightOn();
                 break;
-            default: 
-                Icon.lightOn()
+            default:
+                Icon.lightOn();
                 break;
         }
     }
-}
-initTheme.load()
+};
+initTheme.load();

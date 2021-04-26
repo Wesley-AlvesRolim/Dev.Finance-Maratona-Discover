@@ -1,9 +1,6 @@
-import { app } from "./app";
-import { form } from "./form";
-import { DOM } from "./dom";
-import { Transaction } from "./transaction";
+import { app } from './app';
+import { form } from './form';
 
-app.init();
 
 
 /* export const storage = {
@@ -23,25 +20,26 @@ const Modal = {
         document.querySelector('.modal-overlay').classList.remove('active');
         form.clearFields();
     }
-}
+};
 
 const layer = {
     open() {
-        document.querySelector('.layerMensage').classList.add('active')
+        document.querySelector('.layerMensage').classList.add('active');
     },
     close() {
-        document.querySelector('.layerMensage').classList.remove('active')
+        document.querySelector('.layerMensage').classList.remove('active');
     }
-}
+};
 
 
 window.addEventListener('click', e => {
-    if (e.target.className === 'new button') { Modal.open() };
-    if (e.target.className === 'newTransaction' || e.target.className === 'newTransactionImg') { Modal.open() };
-    if (e.target.className === 'button cancel') { Modal.close() };
-    if (e.target.className === 'layerMensage active') { layer.close() };
-})
+    if (e.target.className === 'new button') { Modal.open(); }
+    if (e.target.className === 'newTransaction' || e.target.className === 'newTransactionImg') { Modal.open(); }
+    if (e.target.className === 'button cancel') { Modal.close(); }
+    if (e.target.className === 'layerMensage active') { layer.close(); }
+});
+
 document.querySelector('#form').addEventListener('submit', e => { form.submit(e); });
 
-
+app.init();
 export { layer, Modal };

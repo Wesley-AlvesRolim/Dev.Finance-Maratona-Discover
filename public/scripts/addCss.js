@@ -1,8 +1,8 @@
-import { Transaction } from "./transaction";
+import { Transaction } from './transaction';
 export const addCss = {
     Css() {
-        let sizeTable = Transaction.all.length
-        let styleElement = document.body.appendChild(document.createElement("style"))
+        let sizeTable = Transaction.all.length;
+        let styleElement = document.body.appendChild(document.createElement('style'));
         let cssRules = `
         .new.button{
             opacity: 1;
@@ -14,11 +14,11 @@ export const addCss = {
             opacity: 0;
             visibility: hidden;
         }
-        `
+        `;
         if (sizeTable >= 4) {
-            styleElement.innerHTML = cssRules
+            styleElement.innerHTML = cssRules;
         } else {
-            styleElement.innerHTML = ''
+            styleElement.innerHTML = '';
         }
     }
-}
+};
