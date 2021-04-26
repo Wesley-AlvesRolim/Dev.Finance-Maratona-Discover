@@ -19,6 +19,7 @@
     "homepage": "https://github.com/Wesley-AlvesRolim/Dev.Finance-Maratona-Discover#readme",
     "devDependencies": {
         "@webpack-cli/generators": "^2.0.0",
+        "eslint": "^7.25.0",
         "webpack": "^5.35.0",
         "webpack-cli": "^4.6.0"
     }
