@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="./public/styles/animations.css">
     <link rel="stylesheet" href="./public/styles/dashboard.css">
     <link rel="stylesheet" href="./public/styles/header.css">
     <link rel="stylesheet" href="./public/styles/balance.css">
@@ -33,7 +34,7 @@
         <section id="balance">
             <h2 class="hide">Balanço</h2>
 
-            <div class="card">
+            <div class="card animated" style="--delay:1;">
                 <h3>
                     <span>Entradas</span>
                     <img src="/assets/income.svg" alt="Imagem de entradas">
@@ -41,7 +42,7 @@
                 <p id="cardIncome">R$ 0,00</p>
             </div>
 
-            <div class="card">
+            <div class="card animated" style="--delay:2;">
                 <h3>
                     <span>Saída</span>
                     <img src="/assets/expense.svg" alt="Imagem de saidas">
@@ -49,7 +50,7 @@
                 <p id="cardExpense">R$ 0,00</p>
             </div>
 
-            <div class="card total">
+            <div class="card animated total" style="--delay:3;">
                 <h3>
                     <span>Total</span>
                     <img src="/assets/total.svg" alt="Imagem do total">

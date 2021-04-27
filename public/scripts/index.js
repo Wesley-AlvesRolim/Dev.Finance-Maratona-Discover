@@ -31,7 +31,12 @@ const layer = {
     }
 };
 
-
+setTimeout(() => {
+    const cards = document.querySelectorAll('div.card');
+    cards.forEach(element => {
+        element.classList.remove('animated');
+    });
+}, 1000);
 window.addEventListener('click', e => {
     if (e.target.className === 'new button') { Modal.open(); }
     if (e.target.className === 'newTransaction' || e.target.className === 'newTransactionImg') { Modal.open(); }

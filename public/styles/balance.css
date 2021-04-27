@@ -73,3 +73,11 @@ h2 {
     background: radial-gradient(circle, #f92121 45%, #9a1c38 95%);
     color: #fff;
 }
+
+.card.animated {
+    opacity: 0;
+    animation: cardPop linear forwards;
+    -webkit-animation: cardPop linear forwards;
+    animation-duration: .5s;
+    animation-delay: calc(.2s * var(--delay));
+}
