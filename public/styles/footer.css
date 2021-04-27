@@ -1,0 +1,19 @@
+    footer {
+        width: 100%;
+        height: auto;
+        padding: .5rem 0;
+        text-align: center;
+        color: #363F5F;
+        opacity: .9;
+        position: relative;
+        align-items: center;
+        bottom: 0;
+    }
+    
+    .github {
+        opacity: .8;
+    }
+    
+    .github:hover {
+        opacity: 1;
+    }
