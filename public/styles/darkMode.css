@@ -1,0 +1,131 @@
+[data-theme='dark'] body {
+    color: #e3ebe3;
+    background-color: #222222;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+[data-theme='dark'] *::-webkit-scrollbar {
+    width: 1.2rem;
+}
+
+[data-theme='dark'] *::-webkit-scrollbar-track {
+    background: #888888;
+    border: solid 2px #5e5d5d;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+[data-theme='dark'] *::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 2px solid #504d4d;
+    background: #302f2f;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+[data-theme='dark'] header {
+    background-image: linear-gradient(180deg, #1d480d 80%, #2c6816 90%, #2d8d07 100%);
+}
+
+[data-theme='dark'] .dark {
+    border-radius: 15rem;
+    background: radial-gradient(circle, #0909c3 45%, #0559a6 70%);
+    -webkit-border-radius: 15rem;
+    -moz-border-radius: 15rem;
+    -ms-border-radius: 15rem;
+    -o-border-radius: 15rem;
+}
+
+[data-theme='dark'] .card {
+    background-color: #383838;
+}
+
+[data-theme='dark'] .card:hover {
+    box-shadow: -5px 6px 20px #211a1a;
+}
+
+[data-theme='dark'] .card.total {
+    background: linear-gradient(360deg, #368b32 0%, #41b114 57%, #00fb10 87%);
+}
+
+[data-theme='dark'] .card.total.changeColor {
+    background: #d8011e;
+}
+
+[data-theme='dark'] #data-table {
+    color: #f1fff1;
+    font: 700;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+[data-theme='dark'] #data-table thead th {
+    background-color: #3c3c3c;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+[data-theme='dark'] #data-table td {
+    background-color: #3c3c3c;
+}
+
+[data-theme='dark'] td.description {
+    color: #d8e4d8;
+}
+
+[data-theme='dark'] td.expense {
+    color: #FF0800;
+}
+
+[data-theme='dark'] .modal {
+    background: #3c3c3c;
+    color: #f5fff6;
+    font-weight: 400;
+}
+
+[data-theme='dark'] h2 {
+    font-weight: 700;
+    color: #f1fff1;
+}
+
+[data-theme='dark'] input {
+    background-color: #f5fff6;
+}
+
+[data-theme='dark'] input:hover {
+    border: none;
+    box-shadow: .9px .9px 10px #e3cce6;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+[data-theme='dark'] input:focus {
+    border: none;
+}
+
+[data-theme='dark'] .newTransaction {
+    background-image: linear-gradient(225deg, #F400A1 0%, #720e9e 50%, #2B86C5 100%);
+}
+
+[data-theme='dark'] footer {
+    background: #3c3c3c;
+    color: #b6b6b6;
+}
