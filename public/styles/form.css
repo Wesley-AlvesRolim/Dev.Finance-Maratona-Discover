@@ -13,14 +13,13 @@
 }
 
 input {
-    border: none;
+    border: 1px solid transparent;
     border-radius: 0.2rem;
     padding: 0.8rem;
     width: 100%;
 }
 
 input:hover {
-    border: 1px solid transparent;
     border-radius: .5rem;
     border-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     border-image-slice: 1;

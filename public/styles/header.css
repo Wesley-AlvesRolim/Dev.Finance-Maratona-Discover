@@ -1,6 +1,6 @@
 header {
     background: #3b821e;
-    background-image: linear-gradient(0deg, #35741c 20%, #389915 50%, #38b507 90%);
+    background-image: linear-gradient(180deg, #35741c 20%, #389915 50%, #38b507 90%);
     padding: 24rem 0 9rem;
     text-align: center;
 }
@@ -55,9 +55,4 @@ header {
     -moz-transition: .5s;
     -ms-transition: .5s;
     -o-transition: .5s;
-}
-
-.logo {
-    color: #fff;
-    font-weight: 400;
 }
