@@ -1,6 +1,5 @@
 [data-theme='dark'] body {
-    color: #e3ebe3;
-    background-color: #222222;
+    background-color: #18191A;
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -46,19 +45,21 @@
 }
 
 [data-theme='dark'] .card {
-    background-color: #383838;
+    background-color: #3a3b3c;
+    color: #e3ebe3;
 }
 
 [data-theme='dark'] .card:hover {
-    box-shadow: -5px 6px 20px #211a1a;
+    background-color: #303030;
+    box-shadow: -5px 6px 20px #4e4e4e;
 }
 
 [data-theme='dark'] .card.total {
-    background: linear-gradient(360deg, #368b32 0%, #41b114 57%, #00fb10 87%);
+    background: linear-gradient(360deg, #2c6d29 0%, #369212 57%, #0cbd17 87%);
 }
 
 [data-theme='dark'] .card.total.changeColor {
-    background: #d8011e;
+    background: #be0720;
 }
 
 [data-theme='dark'] #data-table {
@@ -72,7 +73,7 @@
 }
 
 [data-theme='dark'] #data-table thead th {
-    background-color: #3c3c3c;
+    background-color: #3a3b3c;
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -81,7 +82,7 @@
 }
 
 [data-theme='dark'] #data-table td {
-    background-color: #3c3c3c;
+    background-color: #3a3b3c;
 }
 
 [data-theme='dark'] td.description {
@@ -89,7 +90,7 @@
 }
 
 [data-theme='dark'] td.expense {
-    color: #FF0800;
+    color: #fc2b23;
 }
 
 [data-theme='dark'] .modal {
@@ -108,17 +109,12 @@
 }
 
 [data-theme='dark'] input:hover {
-    border: none;
+    border: 1px solid transparent;
     box-shadow: .9px .9px 10px #e3cce6;
-    border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
 }
 
 [data-theme='dark'] input:focus {
-    border: none;
+    border: 1px solid transparent;
 }
 
 [data-theme='dark'] .newTransaction {
@@ -126,6 +122,6 @@
 }
 
 [data-theme='dark'] footer {
-    background: #3c3c3c;
+    background: #242526;
     color: #b6b6b6;
 }
