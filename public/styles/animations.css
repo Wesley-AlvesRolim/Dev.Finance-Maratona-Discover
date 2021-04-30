@@ -62,3 +62,33 @@
         -o-transform: scale(1);
     }
 }
+
+@keyframes headerAnimation {
+    40% {
+        padding: 0;
+    }
+    100% {
+        padding: 24rem 0 9rem;
+        opacity: 1;
+    }
+}
+
+@keyframes headerAnimationToDesktop {
+    0% {
+        opacity: 0;
+        padding: 0;
+    }
+    100% {
+        padding: 2rem 0 9rem;
+        opacity: 1;
+    }
+}
+
+@keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

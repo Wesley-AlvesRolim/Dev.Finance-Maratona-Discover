@@ -5,6 +5,22 @@ header {
     text-align: center;
 }
 
+header.animated {
+    animation: headerAnimation .4s 0s;
+    -webkit-animation: headerAnimation .4s 0s;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+}
+
+header.animated>div,
+header.animated>img {
+    animation: opacityAnimation .5s .2s;
+    -webkit-animation: opacityAnimation .5s .2s;
+}
+
 #swithTheme {
     height: 20px;
     display: flex;

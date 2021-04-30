@@ -32,8 +32,8 @@ const layer = {
 };
 
 setTimeout(() => {
-    const cards = document.querySelectorAll('div.card');
-    cards.forEach(element => {
+    const classAnimated = document.querySelectorAll('.animated');
+    classAnimated.forEach(element => {
         element.classList.remove('animated');
     });
 }, 1000);

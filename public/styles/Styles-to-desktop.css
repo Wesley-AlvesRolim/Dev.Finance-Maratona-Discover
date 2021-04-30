@@ -5,6 +5,10 @@
         header {
             padding: 2rem 0 9rem;
         }
+        header.animated {
+            animation: headerAnimationToDesktop 1s 0s;
+            -webkit-animation: headerAnimationToDesktop 1s 0s;
+        }
         .light {
             position: relative;
             left: -20px;
