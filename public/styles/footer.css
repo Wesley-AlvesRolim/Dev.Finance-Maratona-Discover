@@ -1,19 +1,39 @@
-    footer {
-        width: 100%;
-        height: auto;
-        padding: .5rem 0;
-        text-align: center;
-        color: #363F5F;
-        opacity: .9;
-        position: relative;
-        align-items: center;
-        bottom: 0;
-    }
-    
-    .github {
-        opacity: .8;
-    }
-    
-    .github:hover {
-        opacity: 1;
-    }
+footer {
+    width: 100%;
+    height: auto;
+    padding: .5rem 0;
+    text-align: center;
+    color: #363F5F;
+    opacity: .9;
+    position: relative;
+    align-items: center;
+    bottom: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+svg {
+    height: 30px;
+    opacity: .7;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+
+svg:hover {
+    opacity: 1;
+}
+
+svg.animated {
+    animation: forwards 1s softShow;
+    -webkit-animation: forwards 1s softShow;
+}

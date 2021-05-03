@@ -78,6 +78,6 @@ h2 {
     opacity: 0;
     animation: cardPop cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
     -webkit-animation: cardPop cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
-    animation-duration: .5s;
+    animation-duration: 1s;
     animation-delay: calc(.2s * var(--delay));
 }
