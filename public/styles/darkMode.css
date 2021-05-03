@@ -125,3 +125,7 @@
     background: #242526;
     color: #b6b6b6;
 }
+
+[data-theme='dark'] svg {
+    fill: #fffaf0;
+}
