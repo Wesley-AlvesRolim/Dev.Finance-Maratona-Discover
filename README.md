@@ -13,7 +13,7 @@
    <br>
    <div style="width: 100vw;">
    <span>To go into the app click</span>
-    <a href="https://wesleyfinance.netlify.app/"><b>here</b></a>
+    <a href="https://wesleyfinance.vercel.app/"><b>here</b></a>
    </div>
     <br>
 
